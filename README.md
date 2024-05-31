@@ -1,4 +1,4 @@
-# Text Editor
+# uTextEditor
 simple and fast Qt text editor.
 
 <img src='https://github.com/UntitledOS/text-editor/assets/60288171/cc40cee0-751d-419f-b698-f9df3a00fc5b' height=500em>
