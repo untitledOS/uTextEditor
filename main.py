@@ -1,12 +1,8 @@
 from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QStyleFactory, QTextEdit, QToolBar, QFileDialog, QLineEdit, QMessageBox
 import sys, os, argparse
 
-from PySide6.QtGui import QColor, QTextCharFormat, QFont, QSyntaxHighlighter
+from PySide6.QtGui import QColor, QTextCharFormat, QFont
 from PySide6.QtCore import Qt, QRegularExpression, QTimer
-
-from pygments import highlight
-from pygments.lexers import PythonLexer
-from pygments.formatters import HtmlFormatter
 
 class MainWindow(QWidget):
     def __init__(self):
@@ -19,10 +15,6 @@ class MainWindow(QWidget):
 
         self.initUI()
         self.update_path_text()
-
-        self.timer = QTimer()
-        self.timer.timeout.connect(self.update_highlight)
-        self.timer.start(100)
 
     def initUI(self):
         self.setWindowTitle("splatpad")
@@ -55,7 +47,6 @@ class MainWindow(QWidget):
         self.text_box = QTextEdit()
         self.text_box.setAcceptRichText(False)
         self.text_box.setPlaceholderText("Start typing here...")
-        self.text_box.setHtml(highlight(self.text_box.toPlainText(), PythonLexer(), HtmlFormatter()))
         self.layout.addWidget(self.text_box)
 
         self.path_text = QLineEdit()
@@ -69,9 +60,6 @@ class MainWindow(QWidget):
                 self.text_box.setText(f.read())
 
         self.show()
-
-    def update_highlight(self):
-        pass
 
     def update_path_text(self):
         if self.path == None:
