@@ -17,7 +17,7 @@ class MainWindow(QWidget):
         self.update_path_text()
 
     def initUI(self):
-        self.setWindowTitle("splatpad")
+        self.setWindowTitle("uTextEditor")
         self.setGeometry(0, 0, 500, 600)
 
         self.layout = QVBoxLayout()
@@ -41,7 +41,7 @@ class MainWindow(QWidget):
         self.toolbar.addAction("delete")
         self.toolbar.actions()[6].triggered.connect(self.delete_file)
         self.toolbar.addAction("about")
-        self.toolbar.actions()[7].triggered.connect(lambda: QMessageBox.information(self, "About", "splatpad\n\nA simple Qt text editor."))
+        self.toolbar.actions()[7].triggered.connect(lambda: QMessageBox.information(self, "About", "uTextEditor\n\nA simple Qt text editor."))
         self.layout.addWidget(self.toolbar)
 
         self.text_box = QTextEdit()
