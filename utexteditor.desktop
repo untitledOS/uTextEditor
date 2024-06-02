@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=splatpad
+Name=uTextEditor
 Icon=accessories-text-editor
-Exec=/home/ethan/Documents/programming/test/venv/bin/python /home/ethan/Documents/programming/test/main.py %f
+Exec=/usr/bin/utexteditor %f
 MimeType=text/plain;
 Terminal=false
 Type=Application
