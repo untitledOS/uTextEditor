@@ -125,7 +125,6 @@ class MainWindow(QWidget):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    app.setStyle(QStyleFactory.create("Windows"))
     main_window = MainWindow()
     app.processEvents()
     sys.exit(app.exec())
